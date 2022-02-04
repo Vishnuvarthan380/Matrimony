@@ -1,0 +1,50 @@
+
+    .card_height {
+        height: 28rem !important;
+        width: 500px !important;
+        border-radius: 0.5rem !important;
+    }
+
+img {
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+}
+.img-container {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    width: auto;
+    height: 400px;
+}
+
+/* @media (max-width: 320px) {
+    nb-card {
+        height: 20rem !important;
+    }
+    .img-container {
+        display: block;
+        max-width: 100%;
+        overflow: hidden;
+        width: auto;
+        height: 300px;
+    }
+    
+    
+} */
+
+@media (max-width: 768px) {
+    .img-container {
+        max-width: 100%;
+        width: auto;
+        overflow: hidden !important;
+        height: 262px !important;
+    }
+}
+@media (min-width: 1450px) and (max-width: 2560px ) {
+    .img-container {
+        max-width: 100%;
+        width: auto;
+        overflow: hidden !important;
+        height: 588px !important;
+    }
+}

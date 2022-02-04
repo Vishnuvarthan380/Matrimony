@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +12,12 @@ export class ProfileService {
 
   public getProfileDetails(): Observable<any> {
     return this.http.get(this.url);
+  }
+  private assessmentData = new BehaviorSubject({});
+  data = this.assessmentData.asObservable();
+
+  addData(data: any) {
+    console.log('data', this.data)
+    this.assessmentData.next(data);
   }
 }

@@ -10,4 +10,6 @@ export interface ProfileInfo {
     city: string;
     state: string;
     country: string;
+    userImage: string;
+
 }

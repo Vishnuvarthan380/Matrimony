@@ -1,39 +1,69 @@
+<nb-layout>
+    <nb-layout-column>
 <div class="home_sec">
-    <div class="home_bg">
-        <div class="container">
-            <div class="headerbg">
-                <div class="row">
-                    <div class="col-12">
-                        <h2>
-                            <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>
-                            Daily Recommendations
-                        </h2>
-                    </div>
-                    <div class="col-12">
-                        <div class="profile_card">
-                            <img class="imagesize" src="assets/images/banner.jpg"/>
-                            <div class="contents">      
-                                <div class="verif_sec">
-                                    <ul>
-                                        <li class="verifi_opt"><img src="../../../assets/images/shield.png" alt="img" /> Verified</li>
-                                        <li class="prime_opt"><img src="../../../assets/images/badge.png" alt="img" /> Prime Platinum</li>
-                                    </ul>
-                                </div>
-                                <h4>Pragati</h4>
-                                <p class="card-text">27 Yrs, 5 ft 5 in. MBBS, Doctor, Poosam, Hindu - Kayastha, Chennai, Tamil Nadu. </p>
-                                <div class="link_sec">                                   
-                                        <span><img src="../../../assets/images/star.png" alt="img" /> Shortlist</span>
-                                    <p>
-                                        Like her?
-                                        <button class="btn_border"><img src="../../../assets/images/close.png" alt="img" /></button>
-                                        <button class="btn_bg"><img src="../../../assets/images/basic-tick.png" alt="img" /></button>
-                                    </p>
+    <div class="row">
+        <div class="col-xxl-3 col-md-5 col-12 mx-auto">
+            <div class="home_bg">
+                <div class="container">
+                    <div class="headerbg px_pad">
+                        <div class="row">
+                            <div (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)"
+                            [@cardAnimator]="animationState" (@cardAnimator.done)="resetAnimationState($event)" class="col-12">
+                            <div class="col-12">
+                                <h2>
+                                    <i class="fa fa-arrow-left mr-2" aria-hidden="true"></i>
+                                    Daily Recommendations
+                                </h2>
+                            </div>
+                            <div class="col-12">
+                                <div class="profile_card">
+                                    <div class="img-container">
+                                        <img class="imageRadius disable_grab" [src]="dailyRecomendationList[index]?.userImage">
+                                    </div>
+                                    <div class="contents rounded-bottom">      
+                                        <div class="verif_sec">
+                                            <ul>
+                                                <li class="verifi_opt"><img src="assets/images/shield.png" alt="img" /> Verified</li>
+                                                <li class="prime_opt"><img src="assets/images/badge.png" alt="img" /> Prime Platinum</li>
+                                            </ul>
+                                        </div>
+                                        <div class="px-0 py-2" *ngIf="dailyRecomendationList">
+                                            <h4>{{dailyRecomendationList[index]?.name}}</h4>
+                                            <div class="d-flex">
+                                                <div>
+                                                    <h6>{{dailyRecomendationList[index]?.age}}, {{dailyRecomendationList[index]?.language}},
+                                                        {{dailyRecomendationList[index]?.caste}},
+                                                        {{dailyRecomendationList[index]?.degree}}</h6>
+                                                    <div>
+                                                        <h6>{{dailyRecomendationList[index]?.city}}, {{dailyRecomendationList[index]?.state}},</h6>
+                                                    </div>
+                                                    <div>
+                                                        <h6>{{dailyRecomendationList[index]?.country}}.</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="link_sec">                             
+                                                <span (click)='animation("shortlisted")'><img  src="../../../assets/images/star.png" alt="img" /> Shortlist</span>
+                                            <p>
+                                                Like her?
+                                                <button class="btn_border"><img (click)='animation("notintrested")' src="../../../assets/images/close.png" alt="img" /></button>
+                                                <button class="btn_bg"><img (click)='animation("intrested")' src="../../../assets/images/basic-tick.png" alt="img" /></button>
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
 </div>
+</nb-layout-column>
+</nb-layout>

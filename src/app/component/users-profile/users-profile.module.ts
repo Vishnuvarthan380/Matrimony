@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UsersProfileRoutingModule } from './users-profile-routing.module';
 import { UsersProfileComponent } from 'src/app/component/users-profile/users-profile.component';
-
+import { NbButtonModule, NbCardModule, NbIconModule, NbLayoutModule, NbToastrModule, NbToastrService  } from '@nebular/theme';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,11 @@ import { UsersProfileComponent } from 'src/app/component/users-profile/users-pro
   ],
   imports: [
     CommonModule,
-    UsersProfileRoutingModule
+    UsersProfileRoutingModule,
+    NbButtonModule,
+    NbCardModule,
+    NbIconModule,
+    NbLayoutModule,
   ]
 })
 export class UsersProfileModule { }

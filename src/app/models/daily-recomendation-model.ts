@@ -9,4 +9,9 @@ export interface dailyRecomendationInfo{
     relegion: string;
     city: string;
     state: string;
+    userImage: string;
+    age: number;
+    language: string;
+    caste: string;
+    country: string;
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DailyRecomendationService {
-  url = './assets/daily-recomendations.json';
+  url = './assets/profiles.json';
 
   constructor(private http: HttpClient) { }
 
