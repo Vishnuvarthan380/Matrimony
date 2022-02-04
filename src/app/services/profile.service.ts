@@ -17,7 +17,6 @@ export class ProfileService {
   data = this.assessmentData.asObservable();
 
   addData(data: any) {
-    console.log('data', this.data)
     this.assessmentData.next(data);
   }
 }

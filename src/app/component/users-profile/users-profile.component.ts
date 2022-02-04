@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { ProfileInfo } from 'src/app/models/profile-model'
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
@@ -40,7 +40,6 @@ export class UsersProfileComponent implements OnInit {
   }
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private service: ProfileService
   ) { }
 
@@ -52,7 +51,6 @@ export class UsersProfileComponent implements OnInit {
     this.service.getProfileDetails().subscribe((result: any) => {
       this.imageCount++;
       this.profileList = result.data.matches;
-      console.log('Profile', this.profileList)
 
     }, err => {
       console.log('getProfileDetails', err);
@@ -65,7 +63,6 @@ export class UsersProfileComponent implements OnInit {
       i,
       imageCount
     }
-    console.log('item', payload);
     this.service.addData(payload);
     this.router.navigate(['user-profile']);
   }

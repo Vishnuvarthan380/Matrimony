@@ -17,21 +17,6 @@ img {
     height: 400px;
 }
 
-/* @media (max-width: 320px) {
-    nb-card {
-        height: 20rem !important;
-    }
-    .img-container {
-        display: block;
-        max-width: 100%;
-        overflow: hidden;
-        width: auto;
-        height: 300px;
-    }
-    
-    
-} */
-
 @media (max-width: 768px) {
     .img-container {
         max-width: 100%;

@@ -16,11 +16,9 @@ export class ProfileComponent implements OnInit {
     private dataService: ProfileService
   ) { 
     this.dataService.data.subscribe(data => {
-      console.log('the data', data);
       let list: any;
       list = data;
       this.selectedItem = list.item;
-      console.log('the selected ', this.selectedItem)
       this.i = list.i;
       this.imageCount = list.imageCount;
 
